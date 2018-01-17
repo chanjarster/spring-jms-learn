@@ -206,3 +206,4 @@ Spring提供了两种JmsListenerContainerFactory实现：
 [javadoc-DefaultJmsListenerContainerFactory]: https://docs.spring.io/spring-framework/docs/4.3.9.RELEASE/javadoc-api/org/springframework/jms/config/DefaultJmsListenerContainerFactory.html
 [javadoc-SimpleJmsListenerContainerFactory]: https://docs.spring.io/spring-framework/docs/4.3.9.RELEASE/javadoc-api/org/springframework/jms/config/SimpleJmsListenerContainerFactory.html
 [uml-relation]: uml/类图-关系.png
+[ref-Pitfall.md]: Pitfall.md
