@@ -154,10 +154,22 @@ else {
 
 Spring提供了两种JmsListenerContainerFactory实现：
 
-1. [DefaultJmsListenerContainerFactory][javadoc-DefaultJmsListenerContainerFactory]，用来生产DefaultMessageListenerContainer
+1. [DefaultJmsListenerContainerFactory][javadoc-DefaultJmsListenerContainerFactory]，用来生产DefaultMessageListenerContainer，Spring Boot提供``DefaultJmsListenerContainerFactoryConfigurer``作为配置工具
 1. [SimpleJmsListenerContainerFactory][javadoc-SimpleJmsListenerContainerFactory]，用来生产SimpleMessageListenerContainer
 
 所以在使用``@JmsListener``需要仔细的选择正确的``JmsListenerContainerFactory``，而不是全局采用一种配置。
+
+## 总结
+
+使用Spring JMS时有需要注意以下三点：
+
+1. 根据实际情况，配置合适的ConnectionFactory Bean，如有需要可以有多个ConnectionFactory Bean。
+1. JmsTemplate, MessageListenerContainer, JmsListenerContainerFactory需根据实际情况配置不同Bean，避免全局使用一套。
+1. JmsTemplate, MessageListenerContainer, JmsListenerContainerFactory选择合适的ConnectionFactory。
+
+下面是一张各个组件的关系图。
+
+![关系图][uml-relation]
 
 ## 参考资料
 
@@ -190,3 +202,4 @@ Spring提供了两种JmsListenerContainerFactory实现：
 [javadoc-JmsListenerContainerFactory]: https://docs.spring.io/spring-framework/docs/4.3.9.RELEASE/javadoc-api/org/springframework/jms/config/JmsListenerContainerFactory.html
 [javadoc-DefaultJmsListenerContainerFactory]: https://docs.spring.io/spring-framework/docs/4.3.9.RELEASE/javadoc-api/org/springframework/jms/config/DefaultJmsListenerContainerFactory.html
 [javadoc-SimpleJmsListenerContainerFactory]: https://docs.spring.io/spring-framework/docs/4.3.9.RELEASE/javadoc-api/org/springframework/jms/config/SimpleJmsListenerContainerFactory.html
+[uml-relation]: uml/类图-关系.png
